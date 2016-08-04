@@ -29,7 +29,9 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js"></script>
 <script>
     $(function(){
-        var $text = $("#id_text").summernote();
+        var $text = $("#id_text");
+        console.dir($text.data("config"));
+        $text.summernote($text.data("config"));
     });
 </script>
 </body>
