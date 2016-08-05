@@ -1,5 +1,7 @@
 from django.forms.fields import CharField
-from django_ideia_summernote.widget import SummernoteWidget
+
+from ideia_summernote.widget import SummernoteWidget
+
 
 class SummernoteFormField(CharField):
 

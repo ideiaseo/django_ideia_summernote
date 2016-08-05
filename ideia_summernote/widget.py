@@ -52,7 +52,6 @@ class SummernoteWidget(forms.Textarea):
         )
 
     def _media(self):
-        print self.assets.get('js')
         return forms.Media(css=self.assets.get('css'),
                            js=self.assets.get('js'))
     media = property(_media)

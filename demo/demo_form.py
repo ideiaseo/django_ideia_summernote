@@ -1,5 +1,6 @@
 from django.forms import forms
-from django_ideia_summernote.fields import SummernoteFormField
+
+from ideia_summernote.fields import SummernoteFormField
 
 __author__ = 'phillip'
 
