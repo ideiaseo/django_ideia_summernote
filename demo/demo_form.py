@@ -9,3 +9,5 @@ __author__ = 'phillip'
 class DemoForm(forms.Form):
 
     text = SummernoteFormField(editor_conf='comment')
+
+    another_text = SummernoteFormField(editor_conf='another')
