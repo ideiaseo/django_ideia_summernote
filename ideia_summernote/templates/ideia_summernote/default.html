@@ -1,14 +1,1 @@
 <textarea name="{{ name }}" id="id_{{ name }}" data-config="{{ config }}" cols="30" rows="20"></textarea>
-{% if load_assets %}
-    {% block css_summernote_assets %}
-        {% for stylesheet in assets.css %}
-            <link rel="stylesheet" href="{{ stylesheet }}">
-        {% endfor %}
-    {% endblock css_summernote_assets %}
-
-    {% block js_summernote_assets %}
-        {% for script in assets.js %}
-            <script type="text/javascript" src="{{ script }}"></script>
-        {% endfor %}
-    {% endblock js_summernote_assets %}
-{% endif %}

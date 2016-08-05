@@ -8,17 +8,7 @@ __author__ = 'phillip'
 
 SUMMERNOTE_DEFAULT_CONFIG = {
 
-     'assets': {
-        'js': [
-            'https://code.jquery.com/jquery-2.2.4.min.js',
-            'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',
-            'http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js'
-        ],
-        'css': [
-            'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
-            'http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css'
-        ]
-    },
+
     'editors': {
         'default': {
             'airMode': False,
@@ -59,10 +49,9 @@ SUMMERNOTE_DEFAULT_CONFIG = {
 
 class SummernoteWidget(Textarea):
 
-    def __init__(self, editor_conf=None, load_assets=None, plugins=None, *args, **kwargs):
+    def __init__(self, editor_conf=None, plugins=None, *args, **kwargs):
         self.editor_conf=editor_conf
         self.plugins = plugins
-        self.load_assets = load_assets
         super(SummernoteWidget, self).__init__(*args, **kwargs)
 
 
@@ -72,7 +61,5 @@ class SummernoteWidget(Textarea):
         editor_config = editors.get(self.editor_conf, editors.get('default'))
         assets = general_config.get('assets', SUMMERNOTE_DEFAULT_CONFIG.get('assets'))
         return mark_safe(render(None, 'ideia_summernote/default.html', {'name': name,
-                                                                        'config': json.dumps(editor_config),
-                                                                        'assets': assets if self.load_assets else None,
-                                                                        'load_assets': self.load_assets
+                                                                        'config': json.dumps(editor_config)
                                                                         }).content)
