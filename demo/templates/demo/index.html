@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,16 +20,14 @@
         </div>
     </div>
 </div>
-
 <script>
     $(function(){
-        var $text = $("#id_text");
-        console.log($text.data("config"));
+        var $text = $("[data-toggle=\"editor\"]");
+        console.dir($text.data("config"));
         $text.summernote($text.data("config"));
-
     });
 </script>
 </body>
 </html>
 
-{% block css_summernote_assets %}{% endblock css_summernote_assets %}
+
