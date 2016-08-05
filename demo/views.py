@@ -9,6 +9,6 @@ class Index(View):
     form = DemoForm
 
     def get(self, request):
-        form = self.form()
+        form = DemoForm()
 
         return render(request, self.TEMPLATE_PATH, {'form': form})

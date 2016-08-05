@@ -4,35 +4,31 @@
     <meta charset="UTF-8">
     <title>Demo application</title>
     </head>
-
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
 <body>
+
 
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <div class="panel">
-        <form action="javascript: alert('Submit!');">
-        {{ form.text }}
-<button>Submit</button>
-</form>
-</div>
+        <div class="panel panel-default">
+          <div class="panel-heading">Editor Example</div>
+          <div class="panel-body">
+            <form action="javascript: alert('Submit!');">
+                {{ form.text }}
+            </form>
+          </div>
+        </div>
     </div>
 </div>
 
-
-
-<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js"></script>
 <script>
     $(function(){
         var $text = $("#id_text");
-        console.dir($text.data("config"));
+        console.log($text.data("config"));
         $text.summernote($text.data("config"));
+
     });
 </script>
 </body>
 </html>
+
+{% block css_summernote_assets %}{% endblock css_summernote_assets %}
