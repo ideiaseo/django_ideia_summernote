@@ -77,6 +77,7 @@ class SummernoteWidget(forms.Textarea):
 
         return mark_safe(render(None, 'ideia_summernote/default.html', { 'self': self,
                                                                         'name': name,
+                                                                         'value': value,
                                                                         'async': self.async,
                                                                         'config': json.dumps(self.editor_conf)
                                                                         }).content)

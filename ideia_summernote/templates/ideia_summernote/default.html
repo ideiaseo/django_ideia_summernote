@@ -1,1 +1,1 @@
-<div data-toggle="editor{% if async %}-async{% endif %}" name="{{ name }}" id="id_{{ name }}" data-config="{{ config }}" >{{ value }}</div>
+<textarea data-toggle="editor{% if async %}-async{% endif %}" name="{{ name }}" id="id_{{ name }}" data-config="{{ config }}" >{{ value|default_if_none:"" }}</textarea>

@@ -158,7 +158,7 @@ SUMMERNOTE_CONFIG = {
             }
         },
         'another': {
-            'airMode': True,
+            'airMode': False,
             'toolbar': [
                 ['style', ['bold', 'italic', 'underline', 'clear']],
                 ['font', ['strikethrough', 'superscript', 'subscript']],
