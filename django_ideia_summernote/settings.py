@@ -149,7 +149,9 @@ SUMMERNOTE_CONFIG = {
                 ['fontsize', ['fontsize']],
                 ['color', ['color']],
                 ['para', ['ul', 'ol', 'paragraph']],
-                ['height', ['height']]
+                ['height', ['height']],
+                ['picture', ['picture']]
+
             ],
             'popover': {
                 'air':[
