@@ -17,7 +17,7 @@ function getCookie(name) {
     return cookieValue;
 }
 
-function sendFile(file, editor, welEditable) {
+function sendFile(file, editor) {
             data = new FormData();
             data.append("file", file);
             var csrftoken = getCookie('csrftoken');
@@ -30,7 +30,7 @@ function sendFile(file, editor, welEditable) {
                 contentType: false,
                 processData: false,
                 success: function(data) {
-                    editor.insertImage(welEditable, data.url);
+                  editor.summernote('insertImage', data.url);
                 }
                 ,
                 beforeSend: function(xhr, settings) {
@@ -45,16 +45,11 @@ $(function init() {
   var $editor = $(document).find('[data-toggle="editor"]');
   var editorConfig = $editor.data('config') || {};
 
-
-  console.dir(editorConfig);
   $editor.summernote({
-      callbacks: {
-          onImageUpload: function(files, editor, welEditable) {
-              console.log(arguments);
-          // upload image to server and create imgNode...
-            sendFile(files[0],editor,welEditable);
-          //$editor.summernote('insertNode', imgNode);
-        }
+    callbacks: {
+      onImageUpload: function(files) {
+        sendFile(files[0], $editor);
       }
+    }
   });
 });
