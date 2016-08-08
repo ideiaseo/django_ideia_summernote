@@ -3,43 +3,8 @@ from django.conf import settings
 from django import forms
 from django.shortcuts import render
 from django.utils.safestring import mark_safe
+from default import SUMMERNOTE_DEFAULT_CONFIG
 
-SUMMERNOTE_DEFAULT_CONFIG = {
-
-    'assets': {
-        'js': (
-            'https://code.jquery.com/jquery-2.2.4.min.js',
-            'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',
-            'https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.min.js', ),
-
-        'css': {
-            'all': (
-                'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
-                'https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css',
-            )
-        }
-    },
-
-    'editors': {
-        'default': {
-            'airMode': False,
-            'toolbar': [
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['height', ['height']]
-            ],
-            'popover': {
-                'air':[
-                    ['para', ['ul', 'ol', 'paragraph']],
-                ]
-            }
-        },
-
-    }
-}
 
 class SummernoteWidget(forms.Textarea):
 

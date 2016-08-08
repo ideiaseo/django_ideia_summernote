@@ -126,6 +126,10 @@ STATIC_ROOT = '/home/phillip/projects/python/django/django_ideia_summernote/stat
 
 SUMMERNOTE_CONFIG = {
 
+    'restrict_to_user': True,
+    'use_path_user': True,
+    'upload_only_image_files': False,
+
     'assets': {
         'js': (
             'https://code.jquery.com/jquery-2.2.4.min.js',

@@ -13,12 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.conf import settings
+from django.conf.urls import include, url
+from django.conf.urls.static import static
 from django.contrib import admin
 from demo.views import Index
+
+url_media = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^ideia-summernote/', include('ideia_summernote.urls', namespace='ideia-summernote')),
-    url(r'^$', Index.as_view(), name='index'),
-]
+    url(r'^index/$', Index.as_view(), name='index'),
+
+] + url_media

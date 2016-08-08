@@ -17,9 +17,13 @@ function getCookie(name) {
     return cookieValue;
 }
 
-function sendFile(file, editor) {
+function sendFile(files, editor) {
             data = new FormData();
-            data.append("file", file);
+
+            $.each(files, function(i, value){
+                data.append("file" + i, value);
+            });
+
             var csrftoken = getCookie('csrftoken');
 
             $.ajax({
@@ -30,7 +34,10 @@ function sendFile(file, editor) {
                 contentType: false,
                 processData: false,
                 success: function(data) {
-                  editor.summernote('insertImage', data.url);
+                    $.each(data.urls, function(i, value){
+                        editor.summernote('insertImage', value);
+                    });
+
                 }
                 ,
                 beforeSend: function(xhr, settings) {
@@ -48,7 +55,7 @@ $(function init() {
   $editor.summernote({
     callbacks: {
       onImageUpload: function(files) {
-        sendFile(files[0], $editor);
+        sendFile(files, $editor);
       }
     }
   });
