@@ -1,6 +1,6 @@
 from django.conf.urls import url
-from django.contrib.staticfiles import views
-
+from ideia_summernote.views import Upload
 urlpatterns = [
-    url(r'^static/(?P<path>.*)$', views.serve),
+    url(r'^upload', Upload.as_view(), name='upload'),
+
 ]

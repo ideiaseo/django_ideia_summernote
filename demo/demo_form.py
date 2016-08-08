@@ -24,5 +24,4 @@ class DemoForm(forms.Form):
         book = Book(title='title', text=self.cleaned_data['text'])
         book.save()
 
-        print book
         return book
