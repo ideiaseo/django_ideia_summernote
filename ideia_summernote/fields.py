@@ -14,6 +14,9 @@ class SummernoteFormField(CharField):
     def clean(self, value):
         return super(SummernoteFormField, self).clean(value)
 
+    def get_editor(self):
+        return self.widget.get_editor()
+
 
 class SummernoteField(models.TextField):
 

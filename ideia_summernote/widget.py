@@ -22,6 +22,10 @@ class SummernoteWidget(forms.Textarea):
     media = property(_media)
 
 
+    def get_editor(self):
+        return self.editor_conf
+
+
     def __init__(self, editor_conf=None, load_init=True, async=None, *args, **kwargs):
 
         self.load_init = load_init
