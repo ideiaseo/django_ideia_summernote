@@ -11,6 +11,9 @@ class SummernoteFormField(CharField):
         kwargs.update({'widget': SummernoteWidget(editor_conf=editor_conf, load_init=load_init, async=async)})
         super(SummernoteFormField, self).__init__(*args, **kwargs)
 
+    def get_editor(self):
+        return self.widget.get_editor()
+
 
 class SummernoteField(models.TextField):
 
