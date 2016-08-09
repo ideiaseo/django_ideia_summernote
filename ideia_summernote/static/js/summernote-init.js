@@ -18,8 +18,8 @@ function getCookie(name) {
 }
 
 function sendFile(files, editor) {
-            data = new FormData();
-
+            var data = new FormData();
+            var $editor = $(editor);
             $.each(files, function(i, value){
                 data.append("file" + i, value);
             });
@@ -34,8 +34,9 @@ function sendFile(files, editor) {
                 contentType: false,
                 processData: false,
                 success: function(data) {
+                    console.dir(data);
                     $.each(data.urls, function(i, value){
-                        editor.summernote('insertImage', value);
+                        $editor.summernote('insertImage', value);
                     });
 
                 }
@@ -51,12 +52,12 @@ function sendFile(files, editor) {
 $(function init() {
   var $editor = $(document).find('[data-toggle="editor"]');
   var editorConfig = $editor.data('config') || {};
-
-  $editor.summernote({
-    callbacks: {
+    Object.assign(editorConfig, {callbacks: {
       onImageUpload: function(files) {
-        sendFile(files, $editor);
+        sendFile(files, this);
       }
-    }
-  });
+    }});
+
+
+    $editor.summernote(editorConfig);
 });
