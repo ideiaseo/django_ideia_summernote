@@ -22,9 +22,8 @@ class SummernoteWidget(forms.Textarea):
     media = property(_media)
 
 
-    def __init__(self, editor_conf=None, load_init=True, async=None, plugins=None, *args, **kwargs):
+    def __init__(self, editor_conf=None, load_init=True, async=None, *args, **kwargs):
 
-        self.plugins = plugins
         self.load_init = load_init
         self.async = async
         self.general_config = getattr(settings, 'SUMMERNOTE_CONFIG', SUMMERNOTE_DEFAULT_CONFIG)
