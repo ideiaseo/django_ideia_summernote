@@ -124,11 +124,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/phillip/projects/python/django/django_ideia_summernote/static/'
 
+
+
+_2_MB = 2048000
 SUMMERNOTE_CONFIG = {
 
     'restrict_to_user': True,
     'use_path_user': True,
     'upload_only_image_files': False,
+    'maximum_image_upload': _2_MB,
 
     'assets': {
         'js': (

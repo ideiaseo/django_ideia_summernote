@@ -34,11 +34,15 @@ function sendFile(files, editor) {
                 contentType: false,
                 processData: false,
                 success: function(data) {
-                    console.dir(data);
                     $.each(data.urls, function(i, value){
                         $editor.summernote('insertImage', value);
                     });
 
+                },
+                error: function(data){
+                    if(data.status ==400){
+                        alert(data.responseJSON.message);
+                    }
                 }
                 ,
                 beforeSend: function(xhr, settings) {

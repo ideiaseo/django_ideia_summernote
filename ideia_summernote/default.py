@@ -1,8 +1,11 @@
+_2_MB = 2048000
+
 SUMMERNOTE_DEFAULT_CONFIG = {
 
     'restrict_to_user': False,
     'use_path_user': False,
     'upload_only_image_files': False,
+    'maximum_image_upload': _2_MB,
 
     'assets': {
         'js': (
