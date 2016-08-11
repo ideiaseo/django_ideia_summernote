@@ -23,12 +23,19 @@
             </form>
 
               <table class="table">
-                  <thead><tr><th>title</th><th>Text</th></tr></thead>
+                  <thead>
+                    <tr>
+                        <th>title</th>
+                        <th>Text</th>
+                        <th>Full Text</th>
+                    </tr>
+                  </thead>
                   <tbody>
                     {% for book in books %}
                         <tr>
                             <td>{{ book.title }}</td>
                             <td>{{ book.text|safe }}</td>
+                            <td>{{ book.text }}</td>
                         </tr>
                     {% endfor %}
                   </tbody>

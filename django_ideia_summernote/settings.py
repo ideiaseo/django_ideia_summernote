@@ -154,8 +154,15 @@ SUMMERNOTE_CONFIG = {
                 ['color', ['color']],
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['height', ['height']],
-                ['picture', ['picture']]
-
+                ['picture', ['picture']],
+                ['codeview', ['codeview']]
+            ],
+            'enabledTags': {
+                'pre': ['style'],
+                'p': ['style']
+            },
+            'enabledStyles':[
+                'text-align', 'font-size', 'line-height', 'background-color', 'width', 'height',
             ],
             'popover': {
                 'air':[
