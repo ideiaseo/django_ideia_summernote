@@ -136,7 +136,7 @@ SUMMERNOTE_CONFIG = {
 
     'assets': {
         'js': (
-            'https://code.jquery.com/jquery-2.2.4.min.js',
+            # 'https://code.jquery.com/jquery-2.2.4.min.js',
             'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',
             'https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.min.js', ),
 
@@ -171,7 +171,12 @@ SUMMERNOTE_CONFIG = {
             'popover': {
                 'air':[
                     ['para', ['ul', 'ol', 'paragraph']],
-                ]
+                ],
+                'image': [
+                ['imagesize', ['imageSize100', 'imageSize50', 'imageSize25']],
+                ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                ['remove', ['removeMedia']]
+              ]
             }
         },
         'another': {

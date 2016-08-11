@@ -1,0 +1,1 @@
+jQuery = window.$ = django.jQuery.noConflict(true);

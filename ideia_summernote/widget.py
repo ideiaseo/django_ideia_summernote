@@ -8,13 +8,9 @@ from default import SUMMERNOTE_DEFAULT_CONFIG
 
 class SummernoteWidget(forms.Textarea):
 
-    class Media:
-        js = (
-            'http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js',
-        )
-
     def _media(self):
-        js = self.assets.get('js')
+        django_jquery_adapter = settings.STATIC_URL + 'js/django-jquery-adapter.js'
+        js = (django_jquery_adapter,) + self.assets.get('js')
         if self.load_init:
             js+= (settings.STATIC_URL + 'js/summernote-init.js',)
         return forms.Media(css=self.assets.get('css'),
