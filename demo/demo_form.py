@@ -1,9 +1,6 @@
 from django.forms import forms
 from demo.models import Book
-
 from ideia_summernote.fields import SummernoteFormField
-
-__author__ = 'phillip'
 
 
 

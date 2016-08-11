@@ -29,8 +29,7 @@ class Upload(View):
         is_user_authenticated = request.user.is_authenticated()
         if SUMMERNOTE_SETTINGS['restrict_to_user']:
             if not is_user_authenticated:
-                return JsonResponse(data={'urls': urls})
-
+                return JsonResponse(data={'message': _('Only authenticated users can submit images!')}, status=403)
 
 
         if request.FILES:

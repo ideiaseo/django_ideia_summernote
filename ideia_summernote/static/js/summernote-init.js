@@ -40,7 +40,7 @@ function sendFile(files, editor) {
 
                 },
                 error: function(data){
-                    if(data.status ==400){
+                    if(data.status ==400 || data.status ==403){
                         alert(data.responseJSON.message);
                     }
                 }
