@@ -9,6 +9,7 @@ A django summernote integration based [Django Ckeditor](https://github.com/djang
 ```bash
     $ pip install django-ideia-summernote
 ```
+
 2. Add ideia_summernote into *INSTALLED_APPS*
 ```python
    INSTALLED_APPS = [
