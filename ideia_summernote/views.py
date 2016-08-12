@@ -1,4 +1,6 @@
+from django.contrib.messages.storage import default_storage
 from django.http import JsonResponse
+from django.template.defaultfilters import slugify
 from django.views.generic import View
 from django.core.files.storage import default_storage
 from django.conf import settings
@@ -45,9 +47,14 @@ class Upload(View):
                 if SUMMERNOTE_SETTINGS['use_path_user'] and is_user_authenticated:
                     user_path = request.user.username
 
-                path = os.path.join(settings.MEDIA_ROOT, user_path, file.name)
+                filename = file.name
+                ext = slugify(filename.split('.')[-1])
+                name = slugify(".".join(filename.split('.')[0:-1]))
+                filename = "{0}.{1}".format(name, ext)
+
+                path = os.path.join(settings.MEDIA_ROOT, user_path, filename)
                 path = default_storage.save(path, file)
                 if path:
-                    urls.append(os.path.join(settings.MEDIA_URL, user_path, file.name))
+                    urls.append(os.path.join(settings.MEDIA_URL, user_path, filename))
 
         return JsonResponse(data={'urls': urls})
