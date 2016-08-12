@@ -1,13 +1,14 @@
-from django.contrib.messages.storage import default_storage
+import os
+
 from django.http import JsonResponse
 from django.template.defaultfilters import slugify
 from django.views.generic import View
 from django.core.files.storage import default_storage
 from django.conf import settings
-import os
+from django.utils.translation import ugettext as _
+
 from default import SUMMERNOTE_DEFAULT_CONFIG
 from ideia_summernote.local_exceptions import FileSizeNotSupported
-from django.utils.translation import ugettext as _
 
 SUMMERNOTE_SETTINGS =  getattr(settings, 'SUMMERNOTE_CONFIG', SUMMERNOTE_DEFAULT_CONFIG)
 MAXIMUM_SIZE = getattr(SUMMERNOTE_SETTINGS, 'maximum_image_upload', SUMMERNOTE_DEFAULT_CONFIG['maximum_image_upload'])
