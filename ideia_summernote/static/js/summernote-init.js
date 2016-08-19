@@ -53,15 +53,22 @@ function sendFile(files, editor) {
             });
     return false;
 }
-$(function init() {
-  var $editor = $(document).find('[data-toggle="editor"]');
-  var editorConfig = $editor.data('config') || {};
-    Object.assign(editorConfig, {callbacks: {
+function refreshEditors(){
+    var $editors = $(document).find('[data-toggle="editor"]');
+
+    $.each($editors, function(i, value){
+       var $editor   = $(value);
+       var editorConfig = $editor.data('config') || {};
+       Object.assign(editorConfig, {callbacks: {
       onImageUpload: function(files) {
         sendFile(files, this);
       }
     }});
 
-
     $editor.summernote(editorConfig);
+
+    });
+}
+$(function init() {
+  refreshEditors();
 });

@@ -8,7 +8,7 @@ from django.conf import settings
 from django.utils.translation import ugettext as _
 
 from default import SUMMERNOTE_DEFAULT_CONFIG
-from ideia_summernote.local_exceptions import FileSizeNotSupported
+from ..ideia_summernote.local_exceptions import FileSizeNotSupported
 
 SUMMERNOTE_SETTINGS =  getattr(settings, 'SUMMERNOTE_CONFIG', SUMMERNOTE_DEFAULT_CONFIG)
 MAXIMUM_SIZE = getattr(SUMMERNOTE_SETTINGS, 'maximum_image_upload', SUMMERNOTE_DEFAULT_CONFIG['maximum_image_upload'])
