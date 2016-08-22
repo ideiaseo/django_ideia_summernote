@@ -1,17 +1,17 @@
 ## Django Ideia Summernote ##
-----------
+
 A django summernote integration based [Django Ckeditor](https://github.com/django-ckeditor/django-ckeditor).
 ### Installation ###
-----------
 
- 1. Install Django Ideia Summernote
+
+####Install Django Ideia Summernote####
 
 ```bash
     $ pip install django-ideia-summernote
 ```
 
 
-2. Add ideia_summernote into *INSTALLED_APPS*
+####Add ideia_summernote into *INSTALLED_APPS*####
 
 ```python
    INSTALLED_APPS = [
@@ -21,7 +21,7 @@ A django summernote integration based [Django Ckeditor](https://github.com/djang
 ```
 
 
-3. Add the summernote field into your form
+####Add the summernote field into your form####
  
  ```python
  from ideia_summernote.fields import SummernoteFormField
@@ -29,7 +29,7 @@ A django summernote integration based [Django Ckeditor](https://github.com/djang
  class BookForm(forms.Form):
 		text = SummernoteFormField()
 ```
-... or directly on Model
+####... or directly on Model####
 
 ```python
 from ideia_summernote.fields import SummernoteField
